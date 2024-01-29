@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ijp-website-app": {
+    "angular-ijp-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ijp-website-app",
+            "outputPath": "dist/angular-ijp-website",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ijp-website-app:build:production"
+              "browserTarget": "angular-ijp-website:build:production"
             },
             "development": {
-              "browserTarget": "ijp-website-app:build:development"
+              "browserTarget": "angular-ijp-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ijp-website-app:build"
+            "browserTarget": "angular-ijp-website:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "ijp-website-app"
+  "defaultProject": "angular-ijp-website"
 }
