@@ -1,0 +1,19 @@
+img {
+    height: 650px;
+    width: auto;
+    box-shadow: 10px 10px #00ff08;
+    margin: 3% !important;
+}
+
+.text {
+    padding: 2em;
+}
+
+h1 {
+    font-size: 80px;
+    line-height: 80px;
+}
+
+h2 {
+    font-size: 15px;
+}

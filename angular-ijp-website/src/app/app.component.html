@@ -6,13 +6,13 @@
   </head>
 
   <body>
-    <mat-toolbar>
+    <mat-toolbar style="position: fixed; top: 0;">
         <mat-toolbar-row [class.mat-elevation-z8]="true">
           <span class="name">{{title}}</span>
         </mat-toolbar-row>
 
         <mat-toolbar-row>
-          <a mat-button routerLink="/about">About Me!</a>
+          <a mat-button routerLink="/">About Me!</a>
           <a mat-button routerLink="/projects">Projects</a>
           <a mat-button routerLink="/music">Music</a>
           <a mat-button routerLink="/contact">Contact</a>
@@ -20,6 +20,8 @@
 
     </mat-toolbar>
 
-    <router-outlet></router-outlet>
+    <div style="margin-top: 128px;">
+      <router-outlet></router-outlet>
+    </div>
   </body>
 </html>

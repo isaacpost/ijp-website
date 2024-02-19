@@ -8,12 +8,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { MusicComponent } from './music/music.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    MusicComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

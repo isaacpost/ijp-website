@@ -1,2 +1,17 @@
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body { margin: 0; }
+
+@font-face {
+    font-family: 'Gayo';
+    src: url('/assets/Gayo.ttf');
+}
+
+@font-face {
+    font-family: 'Kode';
+    src: url('/assets/KodeMono.ttf');
+}
+
+* {
+    font-family: "Kode" !important;
+}
