@@ -15,3 +15,7 @@ body { margin: 0; }
 * {
     font-family: "Kode" !important;
 }
+
+html {
+    background-color: #E9F1F7;
+}
