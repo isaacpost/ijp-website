@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 
-// WOAH OLD MAN
-
 export class AboutComponent implements OnInit {
 
   constructor() { }
