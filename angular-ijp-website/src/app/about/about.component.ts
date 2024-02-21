@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 
-//Change
+//New Change
 
 export class AboutComponent implements OnInit {
 
