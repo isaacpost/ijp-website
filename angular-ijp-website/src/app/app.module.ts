@@ -11,6 +11,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { MusicComponent } from './music/music.component';
 import { ContactComponent } from './contact/contact.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {MatDividerModule} from '@angular/material/divider';
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

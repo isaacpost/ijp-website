@@ -3,6 +3,7 @@ img {
     width: auto;
     box-shadow: 10px 10px #00ff08;
     margin: 3% !important;
+    border: black 1px solid
 }
 
 h1 {
