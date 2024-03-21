@@ -1,4 +1,4 @@
-<div style="display: flex; flex-flow: row wrap; align-items: center; justify-content: center;">
+<div style="display: flex; flex-flow: row wrap; align-items: center; justify-content: space-around;">
     <img src="/assets/portrait.jpg" alt="image" (load)="portraitLoaded()">
 
     <div class="text-block">
@@ -24,4 +24,24 @@
     </div>
 
     <img src="/assets/test_portrait.jpg" alt="image">
+
+    <c-carousel>
+        <c-carousel-indicators></c-carousel-indicators>
+        <c-carousel-inner>
+          <c-carousel-item *ngFor="let slide of slides">
+            <img
+              alt="{{slide.title}}"
+              class="d-block w-100"
+              loading="lazy"
+              src="{{slide.src}}"
+            />
+            <c-carousel-caption class="d-none d-md-block">
+              <h3>{{slide.title}}</h3>
+              <p>{{slide.subtitle}}</p>
+            </c-carousel-caption>
+          </c-carousel-item>
+        </c-carousel-inner>
+        <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+        <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+      </c-carousel>
 </div>

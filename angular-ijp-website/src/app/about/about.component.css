@@ -1,23 +1,21 @@
 img {
-    height: 650px;
-    width: auto;
+    height: auto;
+    width: 25%;
     box-shadow: 10px 10px #00ff08;
-    margin: 3% !important;
-    border: black 1px solid
+    margin: 1% !important;
+    border: black 1px solid;
+    flex-shrink: 0;
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 60px;
     line-height: 80px;
-}
-
-h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important
 }
 
 h2 {
     font-size: 25px;
     line-height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important
 }
 
 .break {
@@ -27,5 +25,5 @@ h2 {
 
 .text-block {
     margin: 1%; 
-    width: 50%;
+    width: 60%;
 }
