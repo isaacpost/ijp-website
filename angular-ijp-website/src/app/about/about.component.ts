@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+// TESTS COMMIT BRUH
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
