@@ -33,9 +33,7 @@ export class AboutComponent implements OnInit {
     }
   }
   
-
   portraitLoaded() {
     console.log("Hello, world!")
   }
-
 }
