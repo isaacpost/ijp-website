@@ -13,7 +13,6 @@ import { ContactComponent } from './contact/contact.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { CarouselModule } from '@coreui/angular';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { CarouselModule } from '@coreui/angular';
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,
-    MatCardModule,
-    CarouselModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
