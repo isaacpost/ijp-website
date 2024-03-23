@@ -5,15 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { MusicComponent } from './music/music.component';
 import { ContactComponent } from './contact/contact.component';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { CarouselModule } from '@coreui/angular';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +30,7 @@ import { CarouselModule } from '@coreui/angular';
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,
-    MatCardModule,
-    CarouselModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
