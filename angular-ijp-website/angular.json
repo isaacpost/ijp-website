@@ -104,5 +104,7 @@
       }
     }
   },
-  "defaultProject": "angular-ijp-website"
+  "cli": {
+    "analytics": "f9bb34ed-01c3-49a1-b2c9-9c909e84abde"
+  }
 }
