@@ -13,8 +13,15 @@ import { ContactComponent } from './contact/contact.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes, provideRouter } from '@angular/router';
+import { CarouselModule } from '@coreui/angular';
 
+const routes: Routes = [
+  { path: '', component: AboutComponent},
+  { path: 'projects', component: ProjectsComponent},
+  { path: 'music', component: MusicComponent},
+  { path: 'contact', component: ContactComponent},
+];
 
 @NgModule({
   declarations: [
@@ -25,14 +32,17 @@ import { RouterModule } from '@angular/router';
     ContactComponent
   ],
   imports: [
+    BrowserModule,
     MatToolbarModule,
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
+    CarouselModule
   ],
-  providers: [],
+  providers: [provideRouter(routes)],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
