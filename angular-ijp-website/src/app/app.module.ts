@@ -13,7 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { CarouselModule } from '@coreui/angular';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,14 +25,12 @@ import { CarouselModule } from '@coreui/angular';
     ContactComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,
     MatCardModule,
-    CarouselModule
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
