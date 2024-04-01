@@ -1,4 +1,4 @@
-img {
+.portrait-img {
     height: auto;
     width: 25%;
     box-shadow: 10px 10px #00ff08;
@@ -26,4 +26,8 @@ h2 {
 .text-block {
     margin: 1%; 
     width: 60%;
+}
+
+.break {
+    padding: 1em;
 }

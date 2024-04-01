@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { AboutComponent } from './about/about.component';
@@ -14,7 +11,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes, provideRouter } from '@angular/router';
-import { CarouselModule } from '@coreui/angular';
 
 const routes: Routes = [
   { path: '', component: AboutComponent},
@@ -38,8 +34,7 @@ const routes: Routes = [
     MatDividerModule,
     MatGridListModule,
     MatCardModule,
-    RouterModule,
-    CarouselModule
+    RouterModule
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent]

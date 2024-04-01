@@ -13,17 +13,46 @@
           </mat-toolbar-row>
 
           <mat-toolbar-row style="color: #E9F1F7;">
-            <a style="margin-left: 10%;" mat-button routerLink="">About Me!</a>
-            <a mat-button routerLink="projects">Projects</a>
-            <a mat-button routerLink="music">Music</a>
-            <a mat-button routerLink="contact">Contact</a>
+            <a 
+              style="margin-left: 10%;" 
+              mat-button routerLink="/" 
+              routerLinkActive="active" 
+              [routerLinkActiveOptions]="{exact: true}">
+              About Me!
+            </a>
+
+            <a 
+              mat-button 
+              routerLink="/projects" 
+              routerLinkActive="active">
+            Projects</a>
+
+            <a 
+              mat-button 
+              routerLink="/music" 
+              routerLinkActive="active">
+              music
+            </a>
+            
+            <a 
+              mat-button 
+              routerLink="/contact" 
+              routerLinkActive="active">
+              Contact
+            </a>
           </mat-toolbar-row>
 
       </mat-toolbar>
 
-      <div *ngIf="inProduction; else developmentMsg" style="margin-top: 128px; margin-inline: 10%;">
+      <div *ngIf="inProduction; else developmentMsg" style="margin-top: 128px; margin-inline: 10%; min-height: 720px">
         <router-outlet></router-outlet>
       </div>
+
+      <mat-toolbar style="bottom: 0;">
+        <mat-toolbar-row>
+          hello
+        </mat-toolbar-row>
+      </mat-toolbar>
 
       <ng-template #developmentMsg>
         <div style="text-align: center; margin-top: 128px; font-size: 30px; line-height: 50px;">
