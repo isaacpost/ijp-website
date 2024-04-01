@@ -21,3 +21,9 @@ a {
 .active{ 
     background: #504aff
 }
+
+.footer-text {
+    width: 100%; 
+    text-align: center; 
+    color: darkgray;
+}
