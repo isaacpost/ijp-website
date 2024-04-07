@@ -64,7 +64,9 @@ export class ProjectsComponent implements OnInit {
                     developing an inventory manager component to effectively track the 
                     college's physical inventory. This encompassed functionalities such 
                     as searching for items based on specific categories, creating and 
-                    editing new item models, and various other tasks.
+                    editing new item models, and various other tasks. If you would like 
+                    to view the codebase, message me at any of my contacts with
+                    your GitHub username and reason for viewing.
                 `,
                 link: "https://github.com/isaacpost/labops-inventory",
                 linkName: "Private GitHub"
