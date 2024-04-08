@@ -35,6 +35,8 @@ export class ProjectsComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        // Object array that is iterated through using *ngIf to show related informtion
+        // FUTURE - host information in a database
         this.projectInfo = [
 
             {

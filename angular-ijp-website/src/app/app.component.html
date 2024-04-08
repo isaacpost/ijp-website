@@ -12,6 +12,7 @@
             <span class="name">{{title}}</span>
           </mat-toolbar-row>
 
+          <!-- Only show the toolbar if on a desktop device -->
           <mat-toolbar-row *ngIf="isDesktopDevice" style="color: #E9F1F7;">
             <a 
               style="margin-left: 10%;" 
@@ -41,6 +42,7 @@
 
       </mat-toolbar>
 
+      <!-- Only show router-outlet if on desktop device, otherwise show message -->
       <div *ngIf="isDesktopDevice; else onMobile; el">
         <div style="margin-top: 128px; margin-inline: 10%; min-height: 848px;">
           <router-outlet></router-outlet>

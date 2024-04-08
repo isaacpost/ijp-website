@@ -14,6 +14,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void { }
   
+  // FUTURE - Only load page until images are loaded
   portraitLoaded() {
     console.log("Hello, world!")
   }
