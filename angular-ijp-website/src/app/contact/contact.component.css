@@ -1,0 +1,27 @@
+mat-card {
+    color: white;
+    width: 450px;
+    height: 256px;
+    margin: 1%;
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.material-icons{
+    font-family: 'Material Icons' !important;
+}
+
+.icon-display {
+    font-size: 100px;
+    height: 100px;
+    width: 100px;
+    padding: 5%;
+    color: #00ff08 !important;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}

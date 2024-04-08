@@ -36,20 +36,6 @@ export class ProjectsComponent implements OnInit {
 
     ngOnInit() {
         this.projectInfo = [
-            {
-                title: "Personal Website",
-                origin: "My Brain",
-                imageLink: "/assets/project_imgs/personal_website_image.jpg",
-                description: `
-                    Site-inception! This project was primarily aimed at showcasing 
-                    my personal expertise in front-end web development (as well as 
-                    providing an opportunity to experiment with engaging color 
-                    palettes). It is built using the Angular framework and is 
-                    currently being hosted on a Hostinger server.
-                `,
-                link: "https://github.com/isaacpost/ijp-website",
-                linkName: "GitHub"
-            },
 
             {
                 title: "LabOps Inventory Manager",
@@ -70,6 +56,40 @@ export class ProjectsComponent implements OnInit {
                 `,
                 link: "https://github.com/isaacpost/labops-inventory",
                 linkName: "Private GitHub"
+            },
+
+            {
+                title: "Otterview Sentiment Analysis",
+                origin: "Rochester Institute of Technology - Engineering Cloud Software Systems",
+                imageLink: "/assets/project_imgs/otterview_image.jpg",
+                description: `
+                    Otterview is a team-of-4-built sentiment analysis program that processes 
+                    reception to popular events on social media platforms. Every comment 
+                    related to a user-specified event is given a sentiment score, tallied to determine 
+                    if the event was a success or not, and then given a letter score. 
+                    The service was cloud-hosted in AWS and set up through CloudFormation. My 
+                    main tasks on the project were assisting with the design the system architecture 
+                    and programming the user interface which was developed in React 
+                    and hosted on AWS Amplify. While the service is no longer in production, you 
+                    can view the codebase at the link below!
+                `,
+                link: "https://github.com/swen-514-614-spr-2023-2/team-3",
+                linkName: "GitHub"
+            },
+
+            {
+                title: "Personal Website",
+                origin: "My Brain",
+                imageLink: "/assets/project_imgs/personal_website_image.jpg",
+                description: `
+                    Site-inception! This project was primarily aimed at showcasing 
+                    my personal expertise in front-end web development (as well as 
+                    providing an opportunity to experiment with engaging color 
+                    palettes). It is built using the Angular framework and is 
+                    currently being hosted on a Hostinger server.
+                `,
+                link: "https://github.com/isaacpost/ijp-website",
+                linkName: "GitHub"
             }
         ]
     }

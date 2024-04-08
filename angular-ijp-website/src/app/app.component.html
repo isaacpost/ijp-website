@@ -12,7 +12,7 @@
             <span class="name">{{title}}</span>
           </mat-toolbar-row>
 
-          <mat-toolbar-row style="color: #E9F1F7;">
+          <mat-toolbar-row *ngIf="isDesktopDevice" style="color: #E9F1F7;">
             <a 
               style="margin-left: 10%;" 
               mat-button routerLink="/" 
@@ -41,20 +41,31 @@
 
       </mat-toolbar>
 
-      <div *ngIf="true; else developmentMsg" style="margin-top: 128px; margin-inline: 10%; min-height: 848px;">
-        <router-outlet></router-outlet>
-      </div>
+      <div *ngIf="isDesktopDevice; else onMobile; el">
+        <div style="margin-top: 128px; margin-inline: 10%; min-height: 848px;">
+          <router-outlet></router-outlet>
+        </div>
+        
 
-      <mat-toolbar>
-        <mat-toolbar-row>
-          <div class="footer-text">&copy;2024 Isaac Post. All rights reserved.</div>
-        </mat-toolbar-row>
-      </mat-toolbar>
+        <mat-toolbar>
+          <mat-toolbar-row>
+            <div class="footer-text">&copy;2024 Isaac Post. All rights reserved.</div>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
 
       <ng-template #developmentMsg>
         <div style="text-align: center; margin-top: 128px; font-size: 30px; line-height: 50px;">
           Site is currently in development.
           Please check back later!
+          <br>
+          - Isaac
+        </div>
+      </ng-template>
+
+      <ng-template #onMobile>
+        <div style="text-align: center; margin-top: 128px; font-size: 25px; line-height: 50px;">
+          Mobile version coming soon. Please return on a desktop device for now.
           <br>
           - Isaac
         </div>
