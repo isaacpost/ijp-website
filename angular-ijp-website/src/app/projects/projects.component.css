@@ -30,6 +30,7 @@ p {
 button {
     color: #00ff08 !important;
     border:#00ff08 1px solid;
+    z-index: 0;
 }
 
 mat-card{
