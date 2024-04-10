@@ -81,14 +81,14 @@ export class ProjectsComponent implements OnInit {
 
             {
                 title: "Personal Website",
-                origin: "My Brain",
+                origin: "Personal Project",
                 imageLink: "/assets/project_imgs/personal_website_image.jpg",
                 description: `
-                    Site-inception! This project was primarily aimed at showcasing 
+                    This project is aimed at showcasing 
                     my personal expertise in front-end web development (as well as 
-                    providing an opportunity to experiment with engaging color 
-                    palettes). It is built using the Angular framework and is 
-                    currently being hosted on a Hostinger server.
+                    providing an opportunity to experiment with a unique color 
+                    palette). It is built using the Angular framework and is 
+                    currently being run on a Hostinger server.
                 `,
                 link: "https://github.com/isaacpost/ijp-website",
                 linkName: "GitHub"
