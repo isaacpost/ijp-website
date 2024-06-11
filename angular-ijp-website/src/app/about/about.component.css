@@ -1,15 +1,18 @@
 .portrait-img {
     height: auto;
-    width: 25%;
+    min-width: 25%;
+    max-width: 20rem;
     box-shadow: 10px 10px #00ff08;
-    margin: 1% !important;
+    margin: 3% !important;
     border: black 1px solid;
     flex-shrink: 0;
 }
 
 h1 {
-    font-size: 60px;
+    font-size: min(40px, 60px);
     line-height: 80px;
+    white-space: nowrap;
+    width: 100%;
 }
 
 h2 {
@@ -24,8 +27,8 @@ h2 {
 }
 
 .text-block {
-    margin: 1%; 
-    width: 60%;
+    margin: 3%; 
+    max-width: 50rem;
 }
 
 .break {

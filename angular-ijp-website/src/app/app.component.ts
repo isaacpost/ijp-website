@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+
+interface MenuRoute {
+  route: string,
+  displayName: string
+}
 
 @Component({
   selector: 'app-root',
@@ -6,7 +12,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   isDesktopDevice: boolean;
+
+  menuRoutes: MenuRoute[] = [
+    {
+      route: "/",
+      displayName: "About Me!"
+    },
+    {
+      route: "/projects",
+      displayName: "Projects"
+    },
+    {
+      route: "/music",
+      displayName: "Music"
+    },
+    {
+      route: "/contact",
+      displayName: "Contact"
+    },
+  ]
 
   constructor() {
     // gets info as to how user navigated to page

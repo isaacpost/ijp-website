@@ -12,6 +12,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes, provideRouter } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', component: AboutComponent},
@@ -36,7 +38,9 @@ const routes: Routes = [
     MatGridListModule,
     MatCardModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    BrowserAnimationsModule
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent]

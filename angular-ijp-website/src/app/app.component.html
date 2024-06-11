@@ -6,72 +6,84 @@
   </head>
 
   <body>
-    <div>
+    <div *ngIf="isDesktopDevice; else onMobile;">
       <mat-toolbar style="position: fixed; top: 0; z-index: 1;">
           <mat-toolbar-row [class.mat-elevation-z8]="true">
             <span class="name">{{title}}</span>
           </mat-toolbar-row>
 
           <!-- Only show the toolbar if on a desktop device -->
-          <mat-toolbar-row *ngIf="isDesktopDevice" style="color: #E9F1F7;">
-            <a 
-              style="margin-left: 10%;" 
-              mat-button routerLink="/" 
-              routerLinkActive="active" 
-              [routerLinkActiveOptions]="{exact: true}">
-              About Me!</a>
-
-            <a 
-              mat-button 
-              routerLink="/projects" 
-              routerLinkActive="active">
-            Projects</a>
-
-            <a 
-              mat-button 
-              routerLink="/music" 
-              routerLinkActive="active">
-              Music</a>
+          <mat-toolbar-row style=" padding-left: 10%;">
             
-            <a 
-              mat-button 
-              routerLink="/contact" 
-              routerLinkActive="active">
-              Contact</a>
+            <a
+              *ngFor="let route of menuRoutes"
+              mat-button [routerLink]="route.route" 
+              routerLinkActive="active" 
+              [routerLinkActiveOptions]="{exact: true}"
+              class="toolbar-nav">
+              {{route.displayName}}</a>
+              
           </mat-toolbar-row>
 
       </mat-toolbar>
 
-      <!-- Only show router-outlet if on desktop device, otherwise show message -->
-      <div *ngIf="isDesktopDevice; else onMobile; el">
-        <div style="margin-top: 128px; margin-inline: 10%; min-height: 848px;">
-          <router-outlet></router-outlet>
-        </div>
-        
-
-        <mat-toolbar>
-          <mat-toolbar-row>
-            <div class="footer-text">&copy;2024 Isaac Post. All rights reserved.</div>
-          </mat-toolbar-row>
-        </mat-toolbar>
+      <div style="margin-top: 128px; margin-inline: 10%; min-height: 848px;">
+        <router-outlet></router-outlet>
       </div>
-
-      <ng-template #developmentMsg>
-        <div style="text-align: center; margin-top: 128px; font-size: 30px; line-height: 50px;">
-          Site is currently in development.
-          Please check back later!
-          <br>
-          - Isaac
-        </div>
-      </ng-template>
-
-      <ng-template #onMobile>
-        <div style="text-align: center; margin-top: 128px; font-size: 25px; line-height: 50px;">
-          Mobile version is coming soon. Please return on a desktop device. Thank you!
-          <br>
-          - Isaac
-        </div>
-      </ng-template>
+      
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <div class="footer-text">&copy;2024 Isaac Post. All rights reserved.</div>
+        </mat-toolbar-row>
+      </mat-toolbar>
     </div>
+
+    <ng-template #developmentMsg>
+      <div style="text-align: center; margin-top: 128px; font-size: 30px; line-height: 50px;">
+        Site is currently in development.
+        Please check back later!
+        <br>
+        - Isaac
+      </div>
+    </ng-template>
+
+    <ng-template #onMobile>
+      <mat-drawer-container>
+        <mat-drawer #drawer mode="push">
+          <div style="display: flex; flex-direction: column;">
+            <a
+            *ngFor="let route of menuRoutes" 
+            mat-button 
+            [routerLink]="route.route" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}"
+            class="drawer-nav"
+            (click)="drawer.close()">
+            {{route.displayName}}</a>
+          </div>
+        </mat-drawer>
+
+        <mat-drawer-content>
+          <mat-toolbar>
+            <mat-toolbar-row [class.mat-elevation-z8]="true">
+              <button mat-icon-button style="float: left;" (click)="drawer.open()">
+                <mat-icon>menu</mat-icon>
+              </button>
+    
+              <span class="name">{{title}}</span>
+            </mat-toolbar-row>
+          </mat-toolbar>
+
+          <router-outlet></router-outlet>
+
+          <mat-toolbar>
+            <mat-toolbar-row>
+              <div class="footer-text">&copy;2024 Isaac Post. All rights reserved.</div>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </mat-drawer-content>
+
+      </mat-drawer-container>
+    </ng-template>
   </body>
 </html>
