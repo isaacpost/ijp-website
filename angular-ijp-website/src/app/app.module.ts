@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatButtonModule, MatIconButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { MusicComponent } from './music/music.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -18,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   { path: '', component: AboutComponent},
   { path: 'projects', component: ProjectsComponent},
-  { path: 'music', component: MusicComponent},
   { path: 'contact', component: ContactComponent},
 ];
 
@@ -27,7 +25,6 @@ const routes: Routes = [
     AppComponent,
     AboutComponent,
     ProjectsComponent,
-    MusicComponent,
     ContactComponent
   ],
   imports: [
