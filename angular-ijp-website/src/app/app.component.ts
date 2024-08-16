@@ -25,10 +25,6 @@ export class AppComponent {
       displayName: "Projects"
     },
     {
-      route: "/music",
-      displayName: "Music"
-    },
-    {
       route: "/contact",
       displayName: "Contact"
     },
