@@ -38,7 +38,6 @@ export class ProjectsComponent implements OnInit {
         // Object array that is iterated through using *ngIf to show related informtion
         // FUTURE - host information in a database
         this.projectInfo = [
-
             {
                 title: "LabOps Inventory Manager",
                 origin: "Rochester Institute of Technology - Web Developer Intern",
@@ -61,6 +60,22 @@ export class ProjectsComponent implements OnInit {
             },
 
             {
+                title: "Mechanations",
+                origin: "Personal Project - Video Game",
+                imageLink: "/assets/project_imgs/mechanations-image.jpg",
+                description: `
+                    In Mechanations, players must combine strategy, precision, and quick reflexes to survive. 
+                    Place gears strategically to power turrets and fend off powerful bosses that bring unique 
+                    mechanics and unpredictable attacks. But brute force won\’t carry you; as enemies unleash 
+                    barrages of firepower, you\’ll need to dodge, weave, and stay one step ahead. Developed 
+                    for the Boss Rush Game Jam 2025 under the theme "Spin," I handled every aspect of the game, 
+                    from coding and visual design to composing the soundtrack.
+                `,
+                link: "https://github.com/isaacpost/labops-inventory",
+                linkName: "Private GitHub"
+            },
+
+            {
                 title: "Otterview Sentiment Analysis",
                 origin: "Rochester Institute of Technology - Engineering Cloud Software Systems",
                 imageLink: "/assets/project_imgs/otterview_image.jpg",
@@ -72,8 +87,8 @@ export class ProjectsComponent implements OnInit {
                     The service was cloud-hosted in AWS and set up through CloudFormation. My 
                     main tasks on the project were assisting with the design the system architecture 
                     and programming the user interface which was developed in React 
-                    and hosted on AWS Amplify. While the service is no longer in production, you 
-                    can view the codebase at the link below!
+                    and hosted on AWS Amplify. While the service is no longer being developed, you 
+                    can view the codebase at the link below.
                 `,
                 link: "https://github.com/swen-514-614-spr-2023-2/team-3",
                 linkName: "GitHub"
@@ -85,9 +100,9 @@ export class ProjectsComponent implements OnInit {
                 imageLink: "/assets/project_imgs/personal_website_image.jpg",
                 description: `
                     This project is aimed at showcasing 
-                    my personal expertise in front-end web development (as well as 
-                    providing an opportunity to experiment with a unique color 
-                    palette). It is built using the Angular framework and is 
+                    my personal expertise in front-end web development 
+                    while providing an interactive way to view my portfolio. 
+                    It is built using the Angular framework and is 
                     currently being run on a Hostinger server.
                 `,
                 link: "https://github.com/isaacpost/ijp-website",

@@ -1,9 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 interface MenuRoute {
-  route: string,
-  displayName: string
+  route: string;
+  displayName: string;
+  sectionId?: string; // Add optional sectionId for scrolling
 }
 
 @Component({
@@ -12,33 +14,52 @@ interface MenuRoute {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('drawer') drawer!: MatDrawer;
 
   isDesktopDevice: boolean;
 
   menuRoutes: MenuRoute[] = [
     {
       route: "/",
-      displayName: "About Me!"
+      displayName: "About",
+      sectionId: "about-section"
     },
     {
       route: "/projects",
-      displayName: "Projects"
+      displayName: "Projects",
+      sectionId: "projects-section"
     },
     {
       route: "/contact",
-      displayName: "Contact"
-    },
-  ]
+      displayName: "Contact",
+      sectionId: "contact-section"
+    }
+  ];
 
-  constructor() {
-    // gets info as to how user navigated to page
-    let details = navigator.userAgent; 
-      
-    let regexp = /android|iphone|kindle|ipad/i; 
-  
-    // regex test for if any of the devices were on mobile
-    this.isDesktopDevice = !regexp.test(details); 
+  constructor(private router: Router) {
+    // Check if the user is on a desktop or mobile device
+    let details = navigator.userAgent;
+    let regexp = /android|iphone|kindle|ipad/i;
+    this.isDesktopDevice = !regexp.test(details);
   }
 
   title = 'I.J.P.';
+
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  navigateOrScroll(route: MenuRoute): void {
+    if (route.sectionId) {
+      this.scrollToSection(route.sectionId);
+    } else {
+      this.router.navigate([route.route]);
+    }
+    if (this.drawer) {
+      this.drawer.close(); // Close drawer if on mobile
+    }
+  }
 }

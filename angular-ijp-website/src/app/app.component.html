@@ -14,21 +14,23 @@
 
           <!-- Only show the toolbar if on a desktop device -->
           <mat-toolbar-row style=" padding-left: 10%;">
-            
             <a
               *ngFor="let route of menuRoutes"
-              mat-button [routerLink]="route.route" 
-              routerLinkActive="active" 
-              [routerLinkActiveOptions]="{exact: true}"
+              mat-button
+              (click)="navigateOrScroll(route)"
               class="toolbar-nav">
-              {{route.displayName}}</a>
-              
+              {{ route.displayName }}
+            </a>
           </mat-toolbar-row>
 
       </mat-toolbar>
 
-      <div style="margin-top: 128px; margin-inline: 10%; min-height: 848px;">
-        <router-outlet></router-outlet>
+      <div style="margin-inline: 10%; min-height: 848px;">
+        <div id="about-section" style="padding-block: 128px;"><app-about></app-about></div>
+        <mat-divider></mat-divider>
+        <div id="projects-section" style="padding-block: 128px;"><app-projects></app-projects></div>
+        <mat-divider></mat-divider>
+        <div id="contact-section" style="padding-block: 128px;"><app-contact></app-contact></div>
       </div>
       
       <mat-toolbar>
@@ -52,14 +54,12 @@
         <mat-drawer #drawer mode="push">
           <div style="display: flex; flex-direction: column;">
             <a
-            *ngFor="let route of menuRoutes" 
-            mat-button 
-            [routerLink]="route.route" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}"
-            class="drawer-nav"
-            (click)="drawer.close()">
-            {{route.displayName}}</a>
+            *ngFor="let route of menuRoutes"
+            mat-button
+            (click)="navigateOrScroll(route)"
+            class="drawer-nav">
+            {{ route.displayName }}
+            </a>
           </div>
         </mat-drawer>
 
@@ -74,7 +74,9 @@
             </mat-toolbar-row>
           </mat-toolbar>
 
-          <router-outlet></router-outlet>
+          <div id="about-section"><app-about></app-about></div>
+          <div id="projects-section"><app-projects></app-projects></div>
+          <div id="contact-section"><app-contact></app-contact></div>
 
           <mat-toolbar>
             <mat-toolbar-row>

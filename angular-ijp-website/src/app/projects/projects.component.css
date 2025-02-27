@@ -28,6 +28,12 @@ p {
     line-height: 30px;
 }
 
+h1 {
+    font-size: min(30px, 60px);
+    white-space: nowrap;
+    width: 100%;
+}
+
 button {
     color: #00ff08 !important;
     border:#00ff08 1px solid;
