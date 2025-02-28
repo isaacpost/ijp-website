@@ -38,6 +38,7 @@ button {
     color: #00ff08 !important;
     border:#00ff08 1px solid;
     z-index: 0;
+    margin-right: 1%;
 }
 
 mat-card{

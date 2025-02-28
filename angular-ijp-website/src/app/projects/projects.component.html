@@ -17,7 +17,7 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-button (click)="goToLink(project.link)">{{project.linkName}}</button>
+        <button mat-button *ngFor="let linkButton of project.linkButtons" (click)="goToLink(linkButton.link)">{{linkButton.linkName}}</button>
       </mat-card-actions>
   </mat-card>
 </div>

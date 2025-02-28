@@ -19,6 +19,10 @@ interface ProjectContent {
     origin: string,
     imageLink: string,
     description: string,
+    linkButtons: LinkButton[]
+}
+
+interface LinkButton {
     link: string,
     linkName: string
 }
@@ -55,8 +59,12 @@ export class ProjectsComponent implements OnInit {
                     to view the codebase, message me at any of my contacts with
                     your GitHub username and reason for viewing.
                 `,
-                link: "https://github.com/isaacpost/labops-inventory",
-                linkName: "Private GitHub"
+                linkButtons: [
+                    {
+                        link: "https://github.com/isaacpost/labops-inventory",
+                        linkName: "Private GitHub"
+                    }
+                ]   
             },
 
             {
@@ -71,8 +79,16 @@ export class ProjectsComponent implements OnInit {
                     for the Boss Rush Game Jam 2025 under the theme "Spin," I handled every aspect of the game, 
                     from coding and visual design to composing the soundtrack.
                 `,
-                link: "https://github.com/isaacpost/labops-inventory",
-                linkName: "Private GitHub"
+                linkButtons: [
+                    {
+                        link: "https://github.com/isaacpost/mechanations",
+                        linkName: "GitHub"
+                    },
+                    {
+                        link: "https://isaacpost.itch.io/mechanations",
+                        linkName: "itch.io Page"
+                    }
+                ]  
             },
 
             {
@@ -90,8 +106,12 @@ export class ProjectsComponent implements OnInit {
                     and hosted on AWS Amplify. While the service is no longer being developed, you 
                     can view the codebase at the link below.
                 `,
-                link: "https://github.com/swen-514-614-spr-2023-2/team-3",
-                linkName: "GitHub"
+                linkButtons: [
+                    {
+                        link: "https://github.com/swen-514-614-spr-2023-2/team-3",
+                        linkName: "GitHub"
+                    }
+                ] 
             },
 
             {
@@ -105,8 +125,12 @@ export class ProjectsComponent implements OnInit {
                     It is built using the Angular framework and is 
                     currently being run on a Hostinger server.
                 `,
-                link: "https://github.com/isaacpost/ijp-website",
-                linkName: "GitHub"
+                linkButtons: [
+                    {
+                        link: "https://github.com/isaacpost/ijp-website",
+                        linkName: "GitHub"
+                    }
+                ] 
             }
         ]
     }
