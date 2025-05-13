@@ -74,7 +74,8 @@ export class ProjectsComponent implements OnInit {
                 description: `
                     Project Tiger Stargazer, sponsored by BAE Systems and developed by team KeplerVision, 
                     offers an immersive way to explore Earth's satellite environment through augmented 
-                    reality. Users can interact with satellites, gaining insights into their orbits and 
+                    reality-enabled Magic Leap 2 Headsets. Users can interact with satellites, gaining 
+                    insights into their orbits and 
                     accessing crucial event data. This innovative application aims to educate users about 
                     satellites, empowering informed decision-making. The Unity-based headset application 
                     seamlessly integrates with a server using BAE Systems' proprietary framework. It delivers 
