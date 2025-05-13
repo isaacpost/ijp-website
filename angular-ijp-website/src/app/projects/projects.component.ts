@@ -68,6 +68,27 @@ export class ProjectsComponent implements OnInit {
             },
 
             {
+                title: "Tiger Stargazer",
+                origin: "Rochester Institute of Technology - Senior Project",
+                imageLink: "/assets/project_imgs/stargazer_image.jpg",
+                description: `
+                    Project Tiger Stargazer, sponsored by BAE Systems and developed by team KeplerVision, 
+                    offers an immersive way to explore Earth's satellite environment through augmented 
+                    reality. Users can interact with satellites, gaining insights into their orbits and 
+                    accessing crucial event data. This innovative application aims to educate users about 
+                    satellites, empowering informed decision-making. The Unity-based headset application 
+                    seamlessly integrates with a server using BAE Systems' proprietary framework. It delivers 
+                    real-time satellite information and calculated events, ensuring an enriching AR experience.
+                `,
+                linkButtons: [
+                    {
+                        link: "https://youtu.be/tPUKzoaNB_U?t=152",
+                        linkName: "Overview Video"
+                    }
+                ]   
+            },
+
+            {
                 title: "Mechanations",
                 origin: "Personal Project - Video Game",
                 imageLink: "/assets/project_imgs/mechanations-image.jpg",
