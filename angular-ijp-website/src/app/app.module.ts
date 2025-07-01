@@ -13,6 +13,7 @@ import { RouterModule, Routes, provideRouter } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TiltEffectDirective } from './tilt-effect.directive';
 
 const routes: Routes = [
   { path: '', component: AboutComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
     AppComponent,
     AboutComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    TiltEffectDirective
   ],
   imports: [
     BrowserModule,

@@ -2,23 +2,25 @@
     height: auto;
     min-width: 25%;
     max-width: 20rem;
-    box-shadow: 10px 10px #00ff08;
     margin: 3% !important;
     border: black 1px solid;
     flex-shrink: 0;
 }
 
 h1 {
-    font-size: min(30px, 60px);
+    font-size: min(25px, 60px);
     line-height: 80px;
+    padding-inline: 3%;
     white-space: nowrap;
-    width: 100%;
+    width:min-content;
+    font-weight: bold;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    padding: 5%;
 }
 
 .break {
@@ -27,7 +29,8 @@ h2 {
 }
 
 .text-block {
-    margin: 5%; 
+    margin: 5%;
+    padding-block: 5%;
     max-width: 50rem;
 }
 

@@ -11,10 +11,12 @@ mat-card {
 }
 
 h1 {
-    font-size: min(30px, 60px);
-    line-height: 80px;
+    font-size: min(25px, 60px);
+    line-height: 50px;
     white-space: nowrap;
+    margin-top: 1%;
     width: 100%;
+    font-weight: bold;
 }
 
 .material-icons{

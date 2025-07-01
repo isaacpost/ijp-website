@@ -18,6 +18,9 @@ export class AppComponent {
 
   isDesktopDevice: boolean;
 
+  rotateTransform: string = '';
+  boxShadow: string = '';
+
   menuRoutes: MenuRoute[] = [
     {
       route: "/",
@@ -61,5 +64,17 @@ export class AppComponent {
     if (this.drawer) {
       this.drawer.close(); // Close drawer if on mobile
     }
+  }
+
+    onMouseMove(event: MouseEvent) {
+    // Calculate rotation angle based on mouse position
+    const rotateX = (event.clientY / window.innerHeight - 0.5) * 10; // Adjust sensitivity here
+    const rotateY = (event.clientX / window.innerWidth - 0.5) * 10; // Adjust sensitivity here
+    this.rotateTransform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    // Calculate shadow position based on mouse position
+    const shadowX = (event.clientX / window.innerWidth * 20 - 10) + 'px'; // Adjust shadow range here
+    const shadowY = (event.clientY / window.innerHeight * 20 - 10) + 'px'; // Adjust shadow range here
+    this.boxShadow = `${shadowX} ${shadowY} 10px rgba(0, 0, 0, 0.4)`; // Adjust shadow color and size
   }
 }

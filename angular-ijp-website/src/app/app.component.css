@@ -37,3 +37,25 @@
 .material-icons {
     font-family: 'Material Icons' !important;
 }
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #3498db;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+  margin: 40px;
+  display: inline-block;
+  border-radius: 12px; /* optional styling */
+}
+
+.box-move-away {
+  width: 200px;
+  height: 200px;
+  background-color: #e67e22;
+  transition: transform 0.2s ease;
+  will-change: transform;
+  margin: 40px;
+  display: inline-block;
+  border-radius: 12px;
+}

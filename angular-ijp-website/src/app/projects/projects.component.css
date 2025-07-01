@@ -20,18 +20,20 @@ mat-card {
 
 img {
     border: #504aff 2px solid;
-    width: 100%
+    width: 100%;
 }
 
 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    line-height: 30px;
+    line-height: 25px;
+    padding: 3%;
 }
 
 h1 {
-    font-size: min(30px, 60px);
+    font-size: min(25px, 60px);
     white-space: nowrap;
     width: 100%;
+    font-weight: bold;
 }
 
 button {

@@ -2,7 +2,7 @@
 
 <div class="card-cont">
   <!-- iterates through projectInfo array for each card and populates card with related info -->
-  <mat-card class="single-card" *ngFor="let project of projectInfo">
+  <mat-card appTiltEffect class="single-card" *ngFor="let project of projectInfo">
       <mat-card-header>
         <mat-card-title>{{project.title}}</mat-card-title>
         <mat-card-subtitle><u>Origin</u>: {{project.origin}}</mat-card-subtitle>
@@ -16,7 +16,7 @@
         </p>
       </mat-card-content>
 
-      <mat-card-actions>
+      <mat-card-actions style="justify-content: center;">
         <button mat-button *ngFor="let linkButton of project.linkButtons" (click)="goToLink(linkButton.link)">{{linkButton.linkName}}</button>
       </mat-card-actions>
   </mat-card>
