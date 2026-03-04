@@ -12,11 +12,12 @@ mat-card {
 
 h1 {
     font-size: min(25px, 60px);
-    line-height: 50px;
+    line-height: 10px;
     white-space: nowrap;
     margin-top: 1%;
     width: 100%;
     font-weight: bold;
+    color: white;
 }
 
 .material-icons{
@@ -33,4 +34,5 @@ h1 {
 
 h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    color: white;
 }

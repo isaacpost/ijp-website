@@ -16,7 +16,7 @@
         </p>
       </mat-card-content>
 
-      <mat-card-actions style="justify-content: center;">
+      <mat-card-actions style="justify-content: right;">
         <button mat-button *ngFor="let linkButton of project.linkButtons" (click)="goToLink(linkButton.link)">{{linkButton.linkName}}</button>
       </mat-card-actions>
   </mat-card>

@@ -1,100 +1,63 @@
 import {
   Directive,
   ElementRef,
-  OnDestroy,
   Renderer2,
-  NgZone
+  HostListener
 } from '@angular/core';
 
 @Directive({
   selector: '[appTiltEffect]'
 })
-export class TiltEffectDirective implements OnDestroy {
-  private pointerX = window.innerWidth / 2;
-  private pointerY = window.innerHeight / 2;
-  private animationFrameId: number | null = null;
-  private pointerHasMoved = false;
+export class TiltEffectDirective {
+
+  private proximityDistance = 500; // range in pixels
 
   constructor(
     private el: ElementRef,
-    private renderer: Renderer2,
-    private ngZone: NgZone
+    private renderer: Renderer2
   ) {
-    // Static shadow on load
+    // Smooth transitions
+    this.renderer.setStyle(
+      this.el.nativeElement,
+      'transition',
+      'box-shadow 0.1s linear'
+    );
+
+    // Start with no shadow
     this.renderer.setStyle(
       this.el.nativeElement,
       'box-shadow',
-      `0px 0px 10px rgba(0, 255, 0, 0.3)`
+      '0px 0px 0px rgba(0,0,0,0)'
     );
-
-    this.ngZone.runOutsideAngular(() => {
-      window.addEventListener('mousemove', this.onPointerMove);
-      window.addEventListener('touchmove', this.onPointerMove, { passive: true });
-    });
-
-    this.requestUpdate();
   }
 
-  onPointerMove = (event: MouseEvent | TouchEvent) => {
-    if (event instanceof MouseEvent) {
-      this.pointerX = event.clientX;
-      this.pointerY = event.clientY;
-    } else if (event.touches && event.touches.length > 0) {
-      this.pointerX = event.touches[0].clientX;
-      this.pointerY = event.touches[0].clientY;
-    }
+  @HostListener('window:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
 
-    this.pointerHasMoved = true;
-    this.requestUpdate();
-  };
-
-  requestUpdate() {
-    if (this.animationFrameId === null) {
-      this.animationFrameId = requestAnimationFrame(() => {
-        this.updateTransformAndShadow();
-        this.animationFrameId = null;
-      });
-    }
-  }
-
-  updateTransformAndShadow() {
     const rect = this.el.nativeElement.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
-    const offsetX = (this.pointerX - centerX) / (rect.width / 2);
-    const offsetY = (this.pointerY - centerY) / (rect.height / 2);
+    const dx = event.clientX - centerX;
+    const dy = event.clientY - centerY;
 
-    const clamp = (n: number) => Math.max(-1, Math.min(1, n));
-    const clampedX = clamp(offsetX);
-    const clampedY = clamp(offsetY);
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-    const rotateX = clampedY * 5;
-    const rotateY = -clampedX * 5;
+    // Normalize distance (0 at center → 1 at edge of range)
+    const normalized = Math.min(distance / this.proximityDistance, 1);
 
-    const shadowX = clampedX * 10;
-    const shadowY = clampedY * 10;
+    // Invert so 1 = strongest when close
+    const strength = 1 - normalized;
+
+    // Fully gradual scaling
+    const shadowOffset = strength * 30;
+    const blur = strength * 60;
+    const opacity = strength * 0.9;
 
     this.renderer.setStyle(
       this.el.nativeElement,
-      'transform',
-      `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+      'box-shadow',
+      `0px ${shadowOffset}px ${blur}px rgba(0,0,0,${opacity})`
     );
-
-    if (this.pointerHasMoved) {
-      this.renderer.setStyle(
-        this.el.nativeElement,
-        'box-shadow',
-        `${shadowX}px ${shadowY}px 10px rgba(0, 255, 0, 0.4)`
-      );
-    }
-  }
-
-  ngOnDestroy() {
-    window.removeEventListener('mousemove', this.onPointerMove);
-    window.removeEventListener('touchmove', this.onPointerMove);
-    if (this.animationFrameId !== null) {
-      cancelAnimationFrame(this.animationFrameId);
-    }
   }
 }
